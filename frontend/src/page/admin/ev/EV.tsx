@@ -12,7 +12,7 @@ import {
   Filter,
 } from "@syncfusion/ej2-react-grids";
 import { SelectionSettingsModel } from "@syncfusion/ej2-react-grids";
-import { message } from "antd";
+import { message, Image } from "antd";
 import { Header } from "../../../component/admin";
 import { EVGrid } from "../../../assets/admin/dummy";
 import {
@@ -22,12 +22,11 @@ import {
   ListTypeEV,
   apiUrlPicture
 } from "../../../services/index";
-import Modal from "../Getting/Model";
+import Modal from "../Getting/Modal";
 import { Trash2 } from "react-feather";
 
 import EditEVModal from "./edit";
 import CreateEVModal from "./create";
-import { Image } from "antd";
 
 const EV = () => {
   const [evData, setEVData] = useState<any[]>([]);
@@ -69,8 +68,7 @@ const EV = () => {
         ID: ev.ID,
         Name: ev.Name ?? "-",
         Email: ev.Employee?.User?.Email ?? "-",
-        Voltage: ev.Voltage ?? "-",
-        Current: ev.Current ?? "-",
+        Description: ev.Description ?? "-",
         Price: ev.Price ?? 0,
         Type: ev.Type?.Type ?? "-",
         Status: ev.Status?.Status ?? "-",
